@@ -3,7 +3,8 @@ name: 01 - Build Blocks v1.1
 on:
   push:
   workflow_dispatch:
-
+  schedule:
+    - cron: "15 10 * * *"
 jobs:
   echo-hello:
     runs-on: ubuntu-latest
