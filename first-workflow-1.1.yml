@@ -26,7 +26,7 @@ jobs:
       - name: Failed Step
         run: |
           echo "I will fail now"
-          exit 0
+          exit 1
       - name: Say Goodbye
         run: |
           echo "This step will be skipped if the previous step fails"
