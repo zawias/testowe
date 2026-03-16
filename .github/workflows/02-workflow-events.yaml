@@ -2,7 +2,9 @@ name: 02 – Workflow Events
 
 on:
   push:
-  #workflow_dispatch:
+  workflow_dispatch:
+  schedule:
+    - cron: "25 14 * * *"
 
 jobs:
   echo:
