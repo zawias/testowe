@@ -5,6 +5,7 @@ on:
   workflow_dispatch:
   schedule:
     - cron: "15 14 * * *"
+    - cron: "0 0 * * *"
 jobs:
   echo-hello:
     runs-on: ubuntu-latest
