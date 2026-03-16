@@ -14,14 +14,3 @@ jobs:
       - name: Show the trigger
         run: echo "Uruchomił mnie event - ${{github.event_name}}"
 
-
-#   echo-goodbye:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Failed Step
-#         run: |
-#           echo "I will fail now"
-#           exit 0
-#       - name: Say Goodbye
-#         run: |
-#           echo "This step will be skipped if the previous step fails"
