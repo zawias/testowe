@@ -18,5 +18,9 @@ jobs:
     name: My job 2
     runs-on: ubuntu-latest
     steps:
-      - name: Hello
-        run: echo "Hello, World!"
+      - name: Hardware
+        run: | 
+          echo "Wyswietl zasoby runnera!"
+          lscpu
+          free -h
+          df -h
