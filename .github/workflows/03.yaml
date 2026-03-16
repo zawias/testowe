@@ -26,9 +26,7 @@ jobs:
       shell: bash
       run: | 
         echo "Działa na bashu."
-        lscpu
-        free -h
-        df -h
+        echo "$RUNNER_OS"
   macos-echo:
     name: macos
     runs-on: macos-latest
