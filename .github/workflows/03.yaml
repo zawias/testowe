@@ -22,19 +22,18 @@ jobs:
     name: windows
     runs-on: windows-latest
     steps:
-      - name: Hardware
-        run: | 
-          echo "Wyswietl zasoby runnera!"
-          lscpu
-          free -h
-          df -h
+    - name: Show OS
+      shell: bash
+      run: | 
+        echo "Działa na bashu."
+        lscpu
+        free -h
+        df -h
   macos-echo:
     name: macos
     runs-on: macos-latest
     steps:
       - name: Hardware
         run: | 
-          echo "Wyswietl zasoby runnera!"
-          lscpu
-          free -h
-          df -h
+          echo "This job is running on a MacOS runner."
+          echo "$RUNNER_OS"
