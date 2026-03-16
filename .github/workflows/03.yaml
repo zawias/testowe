@@ -1,0 +1,40 @@
+name: 03 – Runners
+
+on:
+#  push:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/30 * * * *"
+
+
+jobs:
+  ubuntu-echo:
+    name: ubuntu
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hardware
+        run: | 
+          echo "Wyswietl zasoby runnera!"
+          lscpu
+          free -h
+          df -h
+  windows-echo:
+    name: windows
+    runs-on: windows-latest
+    steps:
+      - name: Hardware
+        run: | 
+          echo "Wyswietl zasoby runnera!"
+          lscpu
+          free -h
+          df -h
+  macos-echo:
+    name: macos
+    runs-on: macos-latest
+    steps:
+      - name: Hardware
+        run: | 
+          echo "Wyswietl zasoby runnera!"
+          lscpu
+          free -h
+          df -h
