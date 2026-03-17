@@ -1,1 +1,1 @@
-# testowe
+# Szkolenie GitHub Action
