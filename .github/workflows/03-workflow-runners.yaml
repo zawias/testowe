@@ -8,22 +8,22 @@ on:
 
 
 jobs:
-  ubuntu-echo:
-    name: ubuntu
-    runs-on: ubuntu-latest
-    steps:
-      - name: Hardware
-        run: | 
+  ubuntu-echo: # 
+    name: ubuntu # nazwa joba, która będzie widoczna w UI
+    runs-on: ubuntu-latest # wybieramy system operacyjny, na którym będzie działał runner (chmurowy)
+    steps: # kroki, które będą wykonywane na runnerze
+      - name: Hardware # nazwa kroku, która będzie widoczna w UI
+        run: | # polecenia, które będą wykonane na runnerze
           echo "Wyswietl zasoby runnera!"
           lscpu
           free -h
           df -h
-  windows-echo:
-    name: windows
-    runs-on: windows-latest
+  windows-echo: # nazwa joba, która będzie widoczna w UI
+    name: windows # nazwa joba, która będzie widoczna w UI
+    runs-on: windows-latest # wybieramy system operacyjny, na którym będzie działał runner (chmurowy)
     steps:
-    - name: Show OS
-      shell: bash
+    - name: Show OS # nazwa kroku, która będzie widoczna w UI
+      shell: bash # domyślnie na Windows runnerze jest to powershell, ale możemy to zmienić
       run: | 
         echo "Działa na bashu."
         echo "$RUNNER_OS"
@@ -35,9 +35,9 @@ jobs:
         run: | 
           echo "This job is running on a MacOS runner."
           echo "$RUNNER_OS"
-  ubuntu-self-hosted:
-    name: ubuntu self-hosted
-    runs-on: self-hosted
+  ubuntu-self-hosted: # nazwa joba, która będzie widoczna w UI
+    name: ubuntu self-hosted # nazwa joba, która będzie widoczna w UI
+    runs-on: self-hosted # używamy własnego runnera, który zarejestrowaliśmy wcześniej (na maszynie lokalnej)
     steps:
       - name: Hardware
         run: | 
