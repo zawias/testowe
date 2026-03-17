@@ -36,7 +36,7 @@ jobs:
           echo "This job is running on a MacOS runner."
           echo "$RUNNER_OS"
   ubuntu-self-hosted:
-    name: ubuntu
+    name: ubuntu self-hosted
     runs-on: self-hosted
     steps:
       - name: Hardware
