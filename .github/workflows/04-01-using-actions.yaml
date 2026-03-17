@@ -2,7 +2,7 @@ name: "04-01 – Using Actions"
 
 on: 
   workflow_dispatch:
-  push:
+  #push:
 
 jobs:
   build:
