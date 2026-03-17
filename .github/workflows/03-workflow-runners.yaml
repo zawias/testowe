@@ -49,6 +49,7 @@ jobs:
           echo "To jest plik 1" > plik1.txt
           echo "To jest plik 2" > plik2.txt
           pwd
+          ls -l
   # echo-self-hosted:
   #   runs-on: self-hosted
   #   steps:
