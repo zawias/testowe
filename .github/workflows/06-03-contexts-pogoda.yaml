@@ -20,7 +20,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: ./CWICZENIA/06-context/pogoda
+        working-directory: ./cwiczenia/06-context/pogoda
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
