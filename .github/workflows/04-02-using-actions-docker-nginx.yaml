@@ -4,8 +4,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-and-test:
-    runs-on: ubuntu-latest
+  build-and-test: # nazwa joba, która będzie widoczna w UI
+    runs-on: ubuntu-latest # wybieramy system operacyjny, na którym będzie działał runner (chmurowy)
 
     steps:
       - name: Checkout Code
