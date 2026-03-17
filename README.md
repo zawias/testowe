@@ -1,2 +1,2 @@
 # Szkolenie GitHub Action
-ok
+ok ok
