@@ -23,7 +23,7 @@ jobs:
         working-directory: ./cwiczenia/06-context/pogoda
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
       - name: Sprawdzanie pogody
         run: |
           bash ./start.sh "${{ inputs.city }}" "${{ env.MY_KLUCZYK }}" >> $GITHUB_STEP_SUMMARY
