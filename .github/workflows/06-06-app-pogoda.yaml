@@ -88,5 +88,5 @@ jobs:
           docker push "$HUB_IMAGE_BASE:$SHORT_SHA"
 
 ## Test i uruchomienie wybudowanego doeckera:
-## docker pull zaawii/python_pogoda_18_03_2026
+## docker pull zaawii/python_pogoda_18_03_2026:zaawii
 ## docker run -d --name test_pogoda -p 8888:8000 -e OPENWEATHER_API_KEY="7cff9972d5c98a9a47ddf6a59cb34d8e" zaawii/python_pogoda_18_03_2026
