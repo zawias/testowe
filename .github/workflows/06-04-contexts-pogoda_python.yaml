@@ -14,7 +14,7 @@ on:
 
 env:
   MY_KLUCZYK: '7cff9972d5c98a9a47ddf6a59cb34d8e'
-  API_KEY: ${{ secrets.MY_API_KEY_W }}
+  #API_KEY: ${{ secrets.MY_API_KEY_W }}
 
 jobs:
   pogoda-info:
@@ -29,12 +29,12 @@ jobs:
         uses: actions/checkout@v6
       - name: Sprawdzanie pogody
         run: |
-          python3 ./start.py "${{ inputs.city }}" "${{ env.API_KEY }}" >> $GITHUB_STEP_SUMMARY
+          python3 ./start.py "${{ inputs.city }}" "${{ env.MY_KLUCZYK }}" >> $GITHUB_STEP_SUMMARY
           python3 --version >> $GITHUB_STEP_SUMMARY
       - uses: actions/setup-python@v6
         with:
           python-version: '3.13'
       - name: Sprawdzanie pogody
         run: |
-          python3 ./start.py "${{ inputs.city }}" "${{ env.API_KEY }}" >> $GITHUB_STEP_SUMMARY
+          python3 ./start.py "${{ inputs.city }}" "${{ env.MY_KLUCZYK }}" >> $GITHUB_STEP_SUMMARY
           python3 --version >> $GITHUB_STEP_SUMMARY
