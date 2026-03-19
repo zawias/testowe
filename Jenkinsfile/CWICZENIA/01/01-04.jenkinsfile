@@ -17,15 +17,7 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                checkout scmGit(
-                    branches: [[name: '*/main']],
-                    extensions: [
-                        sparseCheckout([[path: 'cwiczenia/06-context/pogoda_python/']])
-                    ],
-                    userRemoteConfigs: [[
-                        url: 'https://github.com/zawias/testowe.git'
-                    ]]
-                )
+                checkout scm
             }
         }
 
