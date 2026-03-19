@@ -17,7 +17,6 @@ pipeline {
     }
     environment {
         workDir = "./cwiczenia/pogoda_python_flusk"
-        myDockerCredential = credentials('dockerHubCredentials')
         HUB_IMAGE_BASE="zawias/python_pogoda_17_03_2026"
     }
     stages {
