@@ -24,8 +24,7 @@ pipeline {
         stage('Wersje narzędzi') {
             steps {
                 dir("${WORKDIR}") {
-                    sh '''
-                        #!/bin/bash
+                    bash '''
                         set -euxo pipefail
                         docker --version
                         curl --version
