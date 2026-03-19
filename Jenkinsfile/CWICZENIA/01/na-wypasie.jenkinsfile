@@ -17,7 +17,7 @@ pipeline {
     }
     environment {
         workDir = "./cwiczenia/06-context/pogoda_python_flusk"
-        HUB_IMAGE_BASE="zawias/python_pogoda_17_03_2026"
+        HUB_IMAGE_BASE="zawias/python_pogoda"
     }
     stages {
         stage('Wybrales bash') {
