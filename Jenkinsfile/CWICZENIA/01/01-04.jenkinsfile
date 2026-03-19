@@ -25,6 +25,7 @@ pipeline {
             steps {
                 dir("${WORKDIR}") {
                     sh '''
+                        set -euxo pipefail
                         docker --version
                         curl --version
                     '''
