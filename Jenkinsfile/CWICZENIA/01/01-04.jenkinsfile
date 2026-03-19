@@ -10,7 +10,7 @@ pipeline {
         TAG = "${env.BUILD_NUMBER}"
         HOST_PORT = '8080'
         CONTAINER_PORT = '80'
-        WORKDIR = 'CWICZENIA/04-praca-z-zewnetrzymi-akcjami/docker-app-02'
+        WORKDIR = 'cwiczenia/04-praca-z-zewnetrzymi-akcjami/docker-app-02'
     }
 
     stages {
