@@ -16,7 +16,7 @@ pipeline {
         string(name: 'tagImage', defaultValue: 'test', description: 'Wprowadz tag dla budowanego obrazu')
     }
     environment {
-        workDir = "./cwiczenia/pogoda_python_flusk"
+        workDir = "./cwiczenia/06-context/pogoda_python_flusk"
         HUB_IMAGE_BASE="zawias/python_pogoda_17_03_2026"
     }
     stages {
