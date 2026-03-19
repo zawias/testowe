@@ -1,0 +1,40 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Budowanie aplikacji'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo 'Uruchamianie testów'
+            }
+            post {
+                always {
+                    echo 'Stage Test zakończony'
+                }
+                success {
+                    echo 'Testy przeszły poprawnie'
+                }
+                failure {
+                    echo 'Testy nie powiodły się'
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            echo 'Pipeline zakończony'
+        }
+        success {
+            echo 'Pipeline zakończony sukcesem'
+        }
+        failure {
+            echo 'Pipeline zakończony błędem'
+        }
+    }
+}
