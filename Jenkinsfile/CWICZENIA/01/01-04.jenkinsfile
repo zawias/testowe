@@ -33,6 +33,7 @@ pipeline {
             steps {
                 dir("${WORKDIR}") {
                     sh '''
+                        #!/bin/bash
                         set -euxo pipefail
                         docker --version
                         curl --version
@@ -45,6 +46,7 @@ pipeline {
             steps {
                 dir("${WORKDIR}") {
                     sh '''
+                        #!/bin/bash
                         set -euxo pipefail
                         docker build \
                           --pull \
@@ -58,6 +60,7 @@ pipeline {
         stage('Pre-cleanup kontenera') {
             steps {
                 sh '''
+                    #!/bin/bash
                     set -euxo pipefail
                     docker ps -a --format '{{.Names}}' | grep -q "^${IMAGE_NAME}$" && docker rm -f "${IMAGE_NAME}" || true
                     sudo fuser -k "${HOST_PORT}/tcp" || true
