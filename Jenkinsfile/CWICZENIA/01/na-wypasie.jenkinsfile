@@ -6,7 +6,7 @@ String dateTime = currentDate.format("dd.MM.yyyy HH:mm")
 
 pipeline {
     agent {
-        label 'dev'
+        label 'linux'
     }
     parameters {
         choice(name: 'whichScript', choices: ['bash', 'python', 'python-flusk'], description: 'Wybierz skrypt ktory uruchomimy')
