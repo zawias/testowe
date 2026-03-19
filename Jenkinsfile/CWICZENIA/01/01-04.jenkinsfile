@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent { label 'linux' }
 
     options {
         disableConcurrentBuilds()
@@ -10,7 +10,7 @@ pipeline {
         TAG = "${env.BUILD_NUMBER}"
         HOST_PORT = '8080'
         CONTAINER_PORT = '80'
-        WORKDIR = 'CWICZENIA/04-praca-z-zewnetrzymi-akcjami/docker-app-02'
+        WORKDIR = 'cwiczenia/04-praca-z-zewnetrzymi-akcjami/docker-app-02'
     }
 
     stages {
@@ -20,10 +20,10 @@ pipeline {
                 checkout scmGit(
                     branches: [[name: '*/main']],
                     extensions: [
-                        sparseCheckout([[path: 'CWICZENIA/06-context/pogoda_python/']])
+                        sparseCheckout([[path: 'cwiczenia/06-context/pogoda_python/']])
                     ],
                     userRemoteConfigs: [[
-                        url: 'https://github.com/TheRealMamuth/work-jsystems-github-actions-examples-public-tasks.git'
+                        url: 'https://github.com/zawias/testowe.git'
                     ]]
                 )
             }
