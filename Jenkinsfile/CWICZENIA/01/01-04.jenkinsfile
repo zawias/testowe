@@ -25,7 +25,6 @@ pipeline {
             steps {
                 dir("${WORKDIR}") {
                     bash '''
-                        set -euxo pipefail
                         docker --version
                         curl --version
                     '''
@@ -37,8 +36,6 @@ pipeline {
             steps {
                 dir("${WORKDIR}") {
                     sh '''
-                        #!/bin/bash
-                        set -euxo pipefail
                         docker build \
                           --pull \
                           --tag "${IMAGE_NAME}:${TAG}" \
@@ -51,8 +48,6 @@ pipeline {
         stage('Pre-cleanup kontenera') {
             steps {
                 sh '''
-                    #!/bin/bash
-                    set -euxo pipefail
                     docker ps -a --format '{{.Names}}' | grep -q "^${IMAGE_NAME}$" && docker rm -f "${IMAGE_NAME}" || true
                     sudo fuser -k "${HOST_PORT}/tcp" || true
                 '''
@@ -62,7 +57,6 @@ pipeline {
         stage('Run kontenera') {
             steps {
                 sh '''
-                    set -euxo pipefail
                     docker run -d --name "${IMAGE_NAME}" -p "${HOST_PORT}:${CONTAINER_PORT}" "${IMAGE_NAME}:${TAG}"
                     docker ps
                 '''
@@ -72,7 +66,6 @@ pipeline {
         stage('Healthcheck HTTP') {
             steps {
                 sh '''
-                    set -euxo pipefail
                     URL="http://localhost:${HOST_PORT}/"
                     echo "Sprawdzam ${URL}"
 
@@ -95,7 +88,6 @@ pipeline {
         stage('Healthcheck HTTP 2') {
             steps {
                 sh '''
-                    set -euxo pipefail
                     URL="http://localhost:${HOST_PORT}/"
 
                     for i in $(seq 1 30); do
@@ -121,7 +113,6 @@ pipeline {
                 '''
 
                 sh '''
-                    set -euxo pipefail
                     docker rm -f "${IMAGE_NAME}" || true
                     docker image rm "${IMAGE_NAME}:${TAG}" || true
                 '''
