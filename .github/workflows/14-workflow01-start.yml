@@ -17,7 +17,7 @@ jobs:
         run: echo "To jest mój przekazany artefakt" > output.txt
 
       - name: Sleep
-        run: sleep 30
+        run: sleep 5
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
