@@ -1,4 +1,4 @@
-name: 14 Copy from other workflow - deploy
+name: 14-02 Copy from other workflow - deploy
 
 on:
   workflow_run:
