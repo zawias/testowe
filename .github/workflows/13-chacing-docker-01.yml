@@ -11,7 +11,7 @@ on:
 defaults:
   run:
     shell: bash
-    working-directory: ./CWICZENIA/13-caching/docker01
+    working-directory: ./cwiczenia/13-caching/docker01
 
 jobs:
   build:
@@ -29,8 +29,8 @@ jobs:
       - name: Build Docker image (with cache)
         uses: docker/build-push-action@v6
         with:
-          context: ./CWICZENIA/13-caching/docker01
-          file: ./CWICZENIA/13-caching/docker01/Dockerfile
+          context: ./cwiczenia/13-caching/docker01
+          file: ./cwiczenia/13-caching/docker01/Dockerfile
 
           # Nie pushujemy obrazu do rejestru – przykład tylko do builda
           push: false
